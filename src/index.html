@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Collage</title>
+
+	<link rel="stylesheet" href="main.scss">
+	<script defer type="module" src="index.js"></script>
+</head>
+<body style="--varies: var(--lgrey);">
+	<svg width="1000" height="700">
+		<style>
+			.grey {
+				stroke: var(--grey);
+			}
+			.varies {
+				stroke: var(--varies);
+				transition: stroke 0.4s;
+			}
+		</style>
+		<path fill="none" class="grey" stroke-width="2" d="M 100 141 V 330 C 100 340 110 350 120 350 H 500" />
+		<path fill="none" class="varies" stroke-width="2" d="M 500 350 H 880 C 890 350 900 360 900 370 V 559" />
+	</svg>
+
+	<div class="section-grid">
+		<div class="header">
+			<h1>Collage</h1>
+			<p>Project by Rohan Ramesh</p>
+		</div>
+
+		<div style="grid-area: source;">
+		<div class="section">
+			<h3 class="section-title">Source</h3>
+
+			<img class="image" id="source" src="../res/7-150x200.bmp" style="filter: invert(0.5);" alt="">
+			<!-- <img class="image" id="source" src="../res/7-150x200.bmp" alt=""> -->
+		</div>
+		</div>
+
+		<div style="grid-area: key; display: grid; align-items: center;">
+		<div class="section">
+			<h3 class="section-title">Key Entry</h3>
+
+			<div class="pseudo-row">
+				<p class="desc">Each field is a <b>hexadecimal digit (0-9 or A-F).</b> Look through the other items to find the right values hidden within. Enter the code and see the secret hidden here!</p>
+			</div>
+
+			<div class="row">
+				<div class="icon"></div>
+				<p class="title">Poem</p>
+				<p class="desc">This is why I wrote a poem</p>
+				<div class="input-group"></div>
+			</div>
+			<div class="row">
+				<div class="icon"></div>
+				<p class="title">Illustration</p>
+				<p class="desc">This is why I drew something</p>
+				<div class="input-group"></div>
+			</div>
+			<div class="row">
+				<div class="icon"></div>
+				<p class="title">Book</p>
+				<p class="desc">This is a book that matters a lot to me</p>
+				<div class="input-group"></div>
+			</div>
+			<div class="row">
+				<div class="icon"></div>
+				<p class="title">Sth else</p>
+				<p class="desc">Idk man I'll sort this all out later</p>
+				<div class="input-group"></div>
+			</div>
+		</div>
+		</div>
+
+		<div style="grid-area: result; display: grid; align-items: end;">
+		<div class="section result">
+			<h3 class="section-title">Result</h3>
+		
+			<canvas id="result" class="image unset"></canvas>
+			<!-- <img class="image unset" src="../res/7-300x400.bmp" alt=""> -->
+		</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "collage",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [],
+  "author": "Rohan Ramesh",
+  "license": "MITgi",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "bmp-js": "^0.1.0",
+    "node-canvas": "^2.7.0",
+    "parcel": "^2.0.0-rc.0"
+  }
+}
