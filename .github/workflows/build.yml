@@ -13,6 +13,8 @@ jobs:
       - run: npm i
       - run: npx parcel build src/index.html
 
+      - run: sed -i 's/\/index/index/g' dist/index.html
+
       - name: Deploy
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
