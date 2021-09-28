@@ -1,4 +1,5 @@
 // node .\encode.js .\res\7-150x200.bmp 0x62be40e219edea4c .\res\new.bin
+// node .\encode.js .\res\self.png 0x54b2134a19edcfad .\res\new.bin
 
 const fs = require('fs')
 const canvasTools = require('node-canvas')

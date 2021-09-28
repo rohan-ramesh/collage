@@ -3,18 +3,18 @@ import binData from 'url:../res/new.bin'
 const $ = x => document.querySelector(x)
 const $$ = x => document.querySelectorAll(x)
 
-const CORRECT_KEY = 0x62be_40e2_19ed_ea4cn
+const CORRECT_KEY = 0x54b2_134a_19ed_cfadn
 
 let inputPlaceholderCnt = 0
 let allInputs = []
-let RAW_DATA
+let rawData
 let resultCtx
 
 main()
 
 async function main() {
 	let res = await fetch(binData)
-	RAW_DATA = new DataView(await res.arrayBuffer())
+	rawData = new DataView(await res.arrayBuffer())
 
 	for (let el of $$('.input-group')) {
 		createInputGroup(el)
@@ -107,9 +107,9 @@ function decode(key) {
 	let baseKey = key
 	const BITMASK = BigInt(2 ** 64) - 1n
 
-	let newData = new DataView(new ArrayBuffer(RAW_DATA.byteLength))
+	let newData = new DataView(new ArrayBuffer(rawData.byteLength))
 	for (let pos = 0; pos < newData.byteLength; pos += 8) {
-		newData.setBigUint64(pos, RAW_DATA.getBigUint64(pos) ^ key)
+		newData.setBigUint64(pos, rawData.getBigUint64(pos) ^ key)
 		key = ((key * 63n) ^ baseKey) & BITMASK
 	}
 	return newData
